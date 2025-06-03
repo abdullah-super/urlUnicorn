@@ -2,36 +2,7 @@
 <html>
   <head>
     <title>URL-Unicorn</title>
-    <style>
-      body {
-        font-family: Arial;
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 20px;
-      }
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-      }
-      button {
-        padding: 10px 20px;
-        background: #007cba;
-        color: white;
-        border: none;
-        cursor: pointer;
-        margin-right: 10px;
-      }
-      .result {
-        margin-top: 20px;
-        padding: 10px;
-        background: #f0f0f0;
-      }
-      #qrImage {
-        max-width: 200px;
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="../static/styles/style.css" />
   </head>
   <body>
     <h1>URL Unicorn</h1>
@@ -43,44 +14,6 @@
     <div id="result"></div>
     <div id="qrResult"></div>
 
-    <script>
-      async function shortenURL() {
-        const url = document.getElementById("urlInput").value;
-        if (!url) return;
-
-        const response = await fetch("/api/shorten", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: url }),
-        });
-
-        const data = await response.json();
-        document.getElementById("result").innerHTML =
-          '<div class="result"><strong>Short URL:</strong><br><a href="' +
-          data.short_url +
-          '">' +
-          data.short_url +
-          "</a></div>";
-      }
-
-      async function generateQR() {
-        const url = document.getElementById("urlInput").value;
-        if (!url) return;
-
-        const response = await fetch("/api/qr", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: url }),
-        });
-
-        const data = await response.json();
-        document.getElementById("qrResult").innerHTML =
-          '<div class="result"><strong>QR Code:</strong><br>' +
-          '<img id="qrImage" src="/static/' +
-          data.qr_file +
-          '" alt="QR Code">' +
-          "</div>";
-      }
-    </script>
+    <script src="../static/scripts/script.js"></script>
   </body>
 </html>
