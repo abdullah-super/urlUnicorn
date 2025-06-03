@@ -109,6 +109,8 @@ GET /api/stats/{shortCode}
 ├── static/          # Static files
 │   ├── qrcodes/    # Generated QR codes
 │   └── images/     # Documentation images
+|   └── scripts/    # Javascript files
+|   └── styles/     # CSS Stylesheets
 └── templates/       # HTML templates
     └── index.html  # Main interface
 ```
