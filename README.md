@@ -2,8 +2,11 @@
 
 A modern URL shortener and QR code generator built with Go, Redis, and Chi router. URL Unicorn provides a simple and efficient way to shorten URLs and generate QR codes for easy sharing.
 
-![URL Shortener Interface](static/images/url-shortener.png)
-![QR Code Generation](static/images/qr-code.png)
+<div align="center">
+  <img src="static/images/url-shortener.png" alt="URL Shortener Interface" width="600"/>
+  <br/><br/>
+  <img src="static/images/qr-code.png" alt="QR Code Generation" width="600"/>
+</div>
 
 ## Features
 
